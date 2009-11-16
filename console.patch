@@ -1,0 +1,25 @@
+--- cake_1.2.1.8004/cake/console/cake~	2009-11-16 14:25:48.000000000 +0200
++++ cake_1.2.1.8004/cake/console/cake	2009-11-16 14:26:07.636266578 +0200
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ ################################################################################
+ #
+ # Bake is a shell script for running CakePHP bake script
+@@ -22,11 +22,9 @@
+ # @license			http://www.opensource.org/licenses/mit-license.php The MIT License
+ #
+ ################################################################################
+-clear
+ 
+-LIB=${0/%cake/}
+-APP=`pwd`
++LIB=/usr/share/php/cake/console
++APP=$(pwd)
+ 
+-exec php -q ${LIB}cake.php -working "${APP}" "$@"
+-
+-exit;
+\ No newline at end of file
++exec php -q ${LIB}/cake.php -working "${APP}" "$@"
++exit 1
