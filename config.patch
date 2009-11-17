@@ -1,0 +1,18 @@
+--- cake_1.2.1.8004/cake/config/paths.php~	2009-11-16 18:02:02.000000000 +0200
++++ cake_1.2.1.8004/cake/config/paths.php	2009-11-17 17:48:12.232914111 +0200
+@@ -156,11 +156,15 @@
+ /**
+  * Path to the logs directory.
+  */
++if (!defined('LOGS')) {
+ 	define('LOGS', TMP.'logs'.DS);
++}
+ /**
+  * Path to the cache files directory. It can be shared between hosts in a multi-server setup.
+  */
++if (!defined('CACHE')) {
+ 	define('CACHE', TMP.'cache'.DS);
++}
+ /**
+  * Path to the vendors directory.
+  */

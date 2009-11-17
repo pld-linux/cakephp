@@ -1,12 +1,15 @@
+# TODO
+# - SimpleTest dependency for -tests: http://simpletest.org/en/download.html
 Summary:	OpenSource Rapid Development PHP Framework
 Name:		cakephp
 Version:	1.2.1.8004
-Release:	0.4
+Release:	0.5
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	http://cakeforge.org/frs/download.php/697/cake_%{version}.tar.bz2/donation=%{name}-%{version}.tar.bz2
 # Source0-md5:	0d01d1bc4e2df9ccf82130a838b06dd6
 Patch0:		console.patch
+Patch1:		config.patch
 URL:		http://www.cakephp.org/
 BuildRequires:	rpmbuild(macros) >= 1.461
 Requires:	php-common
@@ -60,6 +63,7 @@ Pliki demonstracyjne i przykłady dla pakietu CakePHP.
 %prep
 %setup -q -n cake_%{version}
 %patch0 -p1
+%patch1 -p1
 
 mv cake/{LICENSE,VERSION}.txt .
 rm cake/console/cake.bat
